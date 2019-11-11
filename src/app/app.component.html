@@ -1,4 +1,7 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+
+<button (click)="showHeaderResponse()">Invoke API</button>
+<br>
+<h5 *ngIf="headers">Headers (HTTP Client)</h5>
+<div *ngFor="let key of headers">
+  {{key}}
+</div>
