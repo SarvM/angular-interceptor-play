@@ -15,6 +15,7 @@ export class AppComponent  {
   showHeaderResponse() {
     this.appService.getAppResponse()
       .subscribe(resp => {
+        //console.log('response', resp);
         const keys = resp.headers.keys();
         this.headers = keys.map(key =>
           `${key}: ${resp.headers.get(key)}`);
