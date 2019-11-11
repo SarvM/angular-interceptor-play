@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
-import { SampleService } from './app.service';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
   styleUrls: [ './app.component.css' ],
-  providers: [ SampleService ],
+  providers: [ AppService ],
 })
 export class AppComponent  {
   headers: string[];
 
-  constructor(private sampleService: SampleService) {}
+  constructor(private appService: AppService) {}
 
   showHeaderResponse() {
-    this.sampleService.getSampleResponse()
+    this.appService.getAppResponse()
       .subscribe(resp => {
         const keys = resp.headers.keys();
         this.headers = keys.map(key =>
